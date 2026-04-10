@@ -10,3 +10,8 @@ dependencies {
 }
 
 tasks.withType(JavaCompile).configureEach { it.options.release = 21 }
+
+// Добавляем этот блок, чтобы откатить версию Gradle до стабильной
+tasks.register('prepareWrapper', Wrapper) {
+    gradleVersion = '8.10'
+}
